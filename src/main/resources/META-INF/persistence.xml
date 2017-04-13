@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <persistence-unit name="ServerPU" transaction-type="JTA">
+
+        <provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>
+
+        <class>com.library.domain.Person</class>
+        <class>com.library.domain.Hike</class>
+
+        <properties>
+            <property name="hibernate.ogm.datastore.provider"
+                      value="org.hibernate.ogm.datastore.mongodb.impl.MongoDBDatastoreProvider"/>
+
+            <property name="hibernate.ogm.datastore.database" value="myDB"/>
+            <property name="hibernate.ogm.datastore.host" value="localhost"/>
+            <property name="hibernate.ogm.datastore.port" value="27017"/>
+
+        </properties>
+
+
+
+    </persistence-unit>
+
+
+</persistence>
